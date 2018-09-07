@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -48,20 +49,30 @@ public class PhoneAdapter extends BaseAdapter {
 
         View renglon = inflater.inflate(R.layout.renglon, null, false);
         TextView item_nombre = renglon.findViewById(R.id.item_nombre);
-        TextView item_tel = renglon.findViewById(R.id.item_tel);
+        final TextView item_tel = renglon.findViewById(R.id.item_tel);
         Button item_llamar = renglon.findViewById(R.id.item_llamar);
         Button item_eliminar = renglon.findViewById(R.id.item_eliminar);
+        ImageView iv_imagen = renglon.findViewById(R.id.iv_imagen);
 
         //linkear el arraylist con la listview
         item_nombre.setText(phones.get(position).getNombre());
         item_tel.setText(phones.get(position).getTelefono());
 
+        if(phones.get(position).getGenero().equals("femenino")){
+            iv_imagen.setImageResource(R.drawable.femenino);
+        }else{
+            iv_imagen.setImageResource(R.drawable.masculino);
+        }
+
+
         item_llamar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String telefono = item_tel.getText().toString();
+
                 final int Request_phone_call= 1;
                 Intent llamar = new Intent(Intent.ACTION_CALL);
-                llamar.setData(Uri.parse("tel:3116435652"));
+                llamar.setData(Uri.parse("tel:"+ telefono));
 
                 if(android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
                     if(ContextCompat.checkSelfPermission(activity, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {

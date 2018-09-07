@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     EditText et_nombre;
     EditText et_tel;
     Button btn_agregar;
+    Switch switch_genero;
 
     PhoneAdapter customAdapter;
 
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         et_nombre = findViewById(R.id.et_nombre);
         et_tel = findViewById(R.id.et_tel);
         btn_agregar = findViewById(R.id.btn_agregar);
+        switch_genero = findViewById(R.id.switch_genero);
 
         lv_telefonos = findViewById(R.id.lv_telefonos);
 
@@ -37,9 +40,19 @@ public class MainActivity extends AppCompatActivity {
 
                 String nombre = et_nombre.getText().toString();
                 String telefono = et_tel.getText().toString();
+                String genero = "";
 
-                Phone newPhone = new Phone(nombre, telefono);
+                if(switch_genero.isChecked()){
+                    genero = "femenino";
+                }else{
+                    genero = "masculino";
+                }
+
+                Phone newPhone = new Phone(nombre, telefono, genero);
                 customAdapter.agregarPhone(newPhone);
+
+                et_nombre.setText("");
+                et_tel.setText("");
             }
         });
     }
