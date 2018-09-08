@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Switch;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,11 +50,16 @@ public class MainActivity extends AppCompatActivity {
                     genero = "masculino";
                 }
 
-                Phone newPhone = new Phone(nombre, telefono, genero);
-                customAdapter.agregarPhone(newPhone);
+                if(nombre.equals("") && telefono.equals("")){
+                    Toast.makeText(MainActivity.this, "campos vacios, por favor ingresar datos", Toast.LENGTH_LONG).show();
 
-                et_nombre.setText("");
-                et_tel.setText("");
+                }else{
+                    Phone newPhone = new Phone(nombre, telefono, genero);
+                    customAdapter.agregarPhone(newPhone);
+
+                    et_nombre.setText("");
+                    et_tel.setText("");
+                }
             }
         });
     }
