@@ -9,19 +9,31 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ingrese nombre"
+        android:hint="Ingresar nombre"
+        android:layout_marginTop="20dp"
+        android:layout_margin="10dp"
+        android:padding="15dp"
+        android:textColorHint="#FFFFFF"
+        android:background="#1E5BAA"
         android:id="@+id/et_nombre"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ingrese numero de telefono"
+        android:layout_margin="10dp"
+        android:padding="15dp"
+        android:background="#1E5BAA"
+        android:textColorHint="#FFFFFF"
+        android:hint="Ingresar numero de telefono"
         android:id="@+id/et_tel"/>
 
     <Switch
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="Genero"
+        android:textSize="9pt"
+        android:textColor="#FFFFFF"
         android:id="@+id/switch_genero"
         android:checked="true"/>
 
@@ -29,6 +41,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Agregar"
+        android:textSize="9pt"
+        android:textColor="#FFFFFF"
+        android:background="#25CC17"
+        android:layout_margin="10dp"
         android:id="@+id/btn_agregar"/>
 
     <ListView
