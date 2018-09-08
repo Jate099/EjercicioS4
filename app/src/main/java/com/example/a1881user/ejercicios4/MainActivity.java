@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 String telefono = et_tel.getText().toString();
                 String genero = "";
 
+
                 if(switch_genero.isChecked()){
                     genero = "femenino";
                 }else{

@@ -31,11 +31,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Genero"
+        android:text="Genero                                            M/F"
         android:textSize="9pt"
         android:textColor="#FFFFFF"
         android:id="@+id/switch_genero"
         android:checked="true"/>
+
 
     <Button
         android:layout_width="match_parent"
@@ -50,6 +51,8 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#1359A5"
+        android:layout_marginTop="10dp"
         android:id="@+id/lv_telefonos"/>
 
 

@@ -1,38 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+
+    android:layout_gravity="center_horizontal"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/iv_imagen"/>
 
-    <TextView
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:text="Nombre"
-        android:id="@+id/item_nombre"/>
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="tel"
-        android:id="@+id/item_tel"/>
+        <TextView
+            android:id="@+id/item_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textSize="8pt"
+            android:textColor="#FFFFFF" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/item_llamar"
-        android:text="Llamar"/>
+        <TextView
+            android:id="@+id/item_tel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="tel"
+            android:textSize="8pt"
+            android:textColor="#FFFFFF" />
 
-    <Button
-        android:layout_width="match_parent"
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/item_eliminar"
-        android:text="Eliminar"/>
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/item_llamar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#25CC17"
+            android:text="Llamar"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/item_eliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#EF3030"
+            android:text="X"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
 
 
 </LinearLayout>
